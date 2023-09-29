@@ -49,7 +49,7 @@ bool send_message(SOCKET& ClientConn, const string& message) // функция �
 		return -1;
 	}
 	message_size = message.size();
-	state = send(ClientConn, (char*)&message_size, sizeof(size_t), 0); // отправить клиенту размер сообщения
+	state = send(ClientConn, (char*)&message_size, sizeof(size_t), 0); // отправить серверу размер сообщения
 	if (state == SOCKET_ERROR) // если ошибка отправления
 	{
 		cout << "Сообщение не отправлено.\n"; // вывести диагностическое сообщение
